@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace TrackGenerator
 {
-    public static class HillGenerator
+    public static class TerrainGenerator
     {
-        private static void GenerateHill()
+        private static void GenerateTerrain(TrackProperties properties)
         {
             
         }
