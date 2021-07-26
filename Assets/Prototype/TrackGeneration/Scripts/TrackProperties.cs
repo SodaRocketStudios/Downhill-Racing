@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace TrackGenerator
 {
-    [CreateAssetMenu(fileName = "New Track Properties", menuName = "Track Properties")]
+    [CreateAssetMenu(fileName = "New Track Properties", menuName = "Track Generation/Track Properties")]
     public class TrackProperties : ScriptableObject
     {
-        [SerializeField, Tooltip("The length of the track")]
+        [SerializeField, Tooltip("The length of the track.")]
         private TrackLength _length;
         public TrackLength Length
         {
@@ -15,8 +15,8 @@ namespace TrackGenerator
             set{_length = value;}
         }
 
-        [SerializeField, Tooltip("The average slope of the track\n\nHigher values will result in faster acceleration through the track.")]
-        private float _slope;
+        [SerializeField, Tooltip("The average downward slope of the track in degrees.\n\nHigher values will result in faster acceleration through the track.")]
+        private float _slope = 0.5f;
         public float Slope
         {
             get{return _slope;}
@@ -24,14 +24,14 @@ namespace TrackGenerator
         }
 
         [SerializeField, Tooltip("The friction of the track when no modifiers are applied.")]
-        private float _baseFriction;
+        private float _baseFriction = 1;
         public float BaseFriction
         {
             get{return _baseFriction;}
             set{_baseFriction = value;}
         }
 
-        [SerializeField]
+        [SerializeField, Tooltip("The type of surface that the track will have.")]
         private TrackTexture _surfaceTexture;
         public TrackTexture surfaceTexture
         {
