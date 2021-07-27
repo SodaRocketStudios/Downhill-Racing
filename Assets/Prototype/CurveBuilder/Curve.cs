@@ -9,9 +9,20 @@ namespace CurveBuilder
         private Vector3[] _normals;
         private float _normalAngle = 0;
 
-        public Curve(Vector3[] controlPoints)
+        public Curve(Vector3[] controlPoints, CurveType curveType)
         {
-            generator = new Bezier();
+            switch(curveType)
+            {
+                case CurveType.bezier:
+                    generator = new Bezier();
+                    break;
+                case CurveType.linear:
+                    SetVertices(controlPoints);
+                    return;
+                default:
+                    SetVertices(controlPoints);
+                    return;
+            }
             SetVertices(generator?.GetCurve(controlPoints));
         }
 
@@ -24,7 +35,6 @@ namespace CurveBuilder
             }
 
             CalculateNormals(_normalAngle);
-            DrawCurve();
         }
 
         private void CalculateNormals(float angle)
@@ -41,7 +51,7 @@ namespace CurveBuilder
             }
         }
 
-        public void DrawCurve()
+        public void Draw()
         {
             for(int i = 0; i < _vertices.Length - 1; i++)
             {
@@ -50,5 +60,11 @@ namespace CurveBuilder
                 Gizmos.DrawLine(Midpoint, _normals[i] + Midpoint);
             }
         }
+    }
+
+    public enum CurveType
+    {
+        bezier,
+        linear
     }
 }

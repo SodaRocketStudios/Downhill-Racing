@@ -30,6 +30,7 @@ namespace CurveBuilder
             int dimesion = numberOfPoints - 1;
 
             Vector3[,] interpolatedPoints = new Vector3[numberOfPoints, numberOfPoints];
+            
             for(int i = 0; i < numberOfPoints; i++)
             {
                 interpolatedPoints[0, i] = controlPoints[i];

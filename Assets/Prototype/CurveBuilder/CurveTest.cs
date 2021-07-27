@@ -9,7 +9,7 @@ namespace CurveBuilder
 
         private void OnDrawGizmos()
         {
-            curve = new Curve(controlPoints);
+            curve = new Curve(controlPoints, CurveType.bezier);
 
             Gizmos.color = Color.white;
 
