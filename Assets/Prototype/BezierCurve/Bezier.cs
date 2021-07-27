@@ -8,6 +8,13 @@ namespace Curve
     {
         public static Vector3[] GetCurve(Vector3[] controlPoints, float resolution = 0.02f)
         {
+            // If there aren't at least 2 points.
+            if(controlPoints.Length < 2)
+            {
+                Debug.LogWarning($"a curve needs at least two points, you provided {controlPoints.Length}.");
+                return new Vector3[]{Vector3.zero};
+            }
+
             Vector3[] curvePoints = new Vector3[Mathf.RoundToInt(1f/resolution) + 1];
 
             int i = 0;
