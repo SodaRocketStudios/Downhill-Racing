@@ -4,26 +4,9 @@ using UnityEngine;
 
 namespace Curve
 {
-    public class Bezier : MonoBehaviour
+    public static class Bezier
     {
-        [SerializeField]
-        private Transform[] controlPoints = new Transform[4];
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.white;
-
-            Vector3 previousPosition = controlPoints[0].position;
-
-            Vector3[] curve = GetCurve(controlPoints[0].position, controlPoints[1].position, controlPoints[2].position, controlPoints[3].position);
-
-            for(int i = 1; i < curve.Length; i++)
-            {
-                Gizmos.DrawLine(curve[i - 1], curve[i]);
-            }
-        }
-
-        public Vector3[] GetCurve(Vector3 A, Vector3 B, Vector3 C, Vector3 D)
+        public static Vector3[] GetCurve(Vector3 A, Vector3 B, Vector3 C, Vector3 D)
         {
             float resolution = 0.02f;
 
@@ -38,7 +21,7 @@ namespace Curve
             return curvePoints;
         }
 
-        private Vector3 GetPoint(Vector3 A, Vector3 B, Vector3 C, Vector3 D, float t)
+        private static Vector3 GetPoint(Vector3 A, Vector3 B, Vector3 C, Vector3 D, float t)
         {
             // Linear interpolation
             Vector3 l0 = Vector3.Lerp(A, B, t);
