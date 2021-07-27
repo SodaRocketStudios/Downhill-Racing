@@ -4,6 +4,6 @@ namespace CurveBuilder
 {
     public interface CurveGenerator 
     {
-        Vector3[] GetCurve(Vector3[] controlPoints, float resolution = 0.02f);
+        Vector3[] GetCurve(Vector3[] controlPoints, int resolution = 10);
     }
 }

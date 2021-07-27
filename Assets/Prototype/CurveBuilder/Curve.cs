@@ -9,7 +9,7 @@ namespace CurveBuilder
         private Vector3[] _normals;
         private float _normalAngle = 0;
 
-        public Curve(Vector3[] controlPoints, CurveType curveType)
+        public Curve(Vector3[] controlPoints, CurveType curveType, int resolution = 10)
         {
             switch(curveType)
             {
@@ -23,7 +23,7 @@ namespace CurveBuilder
                     SetVertices(controlPoints);
                     return;
             }
-            SetVertices(generator?.GetCurve(controlPoints));
+            SetVertices(generator?.GetCurve(controlPoints, resolution));
         }
 
         public void SetVertices(Vector3[] vertices)
@@ -32,6 +32,7 @@ namespace CurveBuilder
             for(int i = 0; i < vertices.Length; i++)
             {
                 _vertices[i] = vertices[i];
+                Debug.Log(vertices[i]);
             }
 
             CalculateNormals(_normalAngle);
@@ -45,7 +46,7 @@ namespace CurveBuilder
             {
                 Vector3 line = _vertices[i] - _vertices[i+1];
                 Quaternion rotationToLine = Quaternion.Inverse(Quaternion.FromToRotation(line, Vector3.right));
-                Vector3 normal = rotationToLine*Vector3.down;
+                Vector3 normal = rotationToLine*Vector3.up;
                 normal = Quaternion.AngleAxis(angle, line)*normal;
                 _normals[i] = normal;
             }
@@ -55,8 +56,8 @@ namespace CurveBuilder
         {
             for(int i = 0; i < _vertices.Length - 1; i++)
             {
-                Gizmos.DrawLine(_vertices[i], _vertices[i+1]);
-                Vector3 Midpoint = 0.5f*(_vertices[i+1] + _vertices[i]);
+                Gizmos.DrawLine(_vertices[i+1], _vertices[i]);
+                Vector3 Midpoint = 0.5f*(_vertices[i] + _vertices[i+1]);
                 Gizmos.DrawLine(Midpoint, _normals[i] + Midpoint);
             }
         }

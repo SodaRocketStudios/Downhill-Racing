@@ -4,7 +4,7 @@ namespace CurveBuilder
 {
     public class Bezier : CurveGenerator
     {
-        public Vector3[] GetCurve(Vector3[] controlPoints, float resolution = 0.02f)
+        public Vector3[] GetCurve(Vector3[] controlPoints, int resolution = 10)
         {
             // If there aren't at least 2 points.
             if(controlPoints.Length < 2)
@@ -13,10 +13,10 @@ namespace CurveBuilder
                 return new Vector3[]{Vector3.zero};
             }
 
-            Vector3[] curvePoints = new Vector3[Mathf.RoundToInt(1f/resolution) + 1];
+            Vector3[] curvePoints = new Vector3[resolution];
 
-            int i = 0;
-            for(float t = 0; t <= 1; t += resolution, i++)
+            float t = 0;
+            for(int i = 0; i < resolution; i++, t += 1f/resolution)
             {
                 curvePoints[i] = GetPoint(controlPoints, t);
             }
@@ -30,7 +30,7 @@ namespace CurveBuilder
             int dimesion = numberOfPoints - 1;
 
             Vector3[,] interpolatedPoints = new Vector3[numberOfPoints, numberOfPoints];
-            
+
             for(int i = 0; i < numberOfPoints; i++)
             {
                 interpolatedPoints[0, i] = controlPoints[i];
