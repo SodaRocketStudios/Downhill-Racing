@@ -30,7 +30,8 @@ namespace CurveBuilder
             Vector3[] points = new Vector3[numberOfPoints];
             for(int i = 0; i < points.Length; i++)
             {
-                points[i].x = i;
+                points[i].x = Mathf.Pow(i, 1.5f);
+                points[i].y = Mathf.Pow(i, 2f);
             }
             return points;
         }

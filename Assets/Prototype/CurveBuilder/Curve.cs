@@ -45,7 +45,7 @@ namespace CurveBuilder
             {
                 Vector3 line = _vertices[i] - _vertices[i+1];
                 Quaternion rotationToLine = Quaternion.Inverse(Quaternion.FromToRotation(line, Vector3.right));
-                Vector3 normal = rotationToLine*Vector3.up;
+                Vector3 normal = rotationToLine*Vector3.down;
                 normal = Quaternion.AngleAxis(angle, line)*normal;
                 _normals[i] = normal;
             }
