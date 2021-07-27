@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CurveBuilder
 {
     public class Curve
     {
+        private CurveGenerator generator;
         private Vector3[] _vertices;
         private Vector3[] _normals;
         private float _normalAngle = 0;
 
-        public Curve(Vector3[] vertices)
+        public Curve(Vector3[] controlPoints)
         {
-            SetVertices(vertices);
+            generator = new Bezier();
+            SetVertices(generator?.GetCurve(controlPoints));
         }
 
         public void SetVertices(Vector3[] vertices)

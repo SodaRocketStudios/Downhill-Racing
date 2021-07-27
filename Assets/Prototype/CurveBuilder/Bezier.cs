@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace CurveBuilder
 {
-    public static class Bezier
+    public class Bezier : CurveGenerator
     {
-        public static Vector3[] GetCurve(Vector3[] controlPoints, float resolution = 0.02f)
+        public Vector3[] GetCurve(Vector3[] controlPoints, float resolution = 0.02f)
         {
             // If there aren't at least 2 points.
             if(controlPoints.Length < 2)
@@ -24,7 +24,7 @@ namespace CurveBuilder
             return curvePoints;
         }
 
-        private static Vector3 GetPoint(Vector3[] controlPoints, float t)
+        private Vector3 GetPoint(Vector3[] controlPoints, float t)
         {
             int numberOfPoints = controlPoints.Length;
             int dimesion = numberOfPoints - 1;

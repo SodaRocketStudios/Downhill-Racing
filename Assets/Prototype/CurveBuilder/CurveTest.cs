@@ -11,14 +11,7 @@ namespace CurveBuilder
 
         private void OnDrawGizmos()
         {
-            if(curve == null)
-            {
-                curve = new Curve(Bezier.GetCurve(controlPoints));
-            }
-            else
-            {
-                curve.SetVertices(Bezier.GetCurve(controlPoints));
-            }
+            curve = new Curve(controlPoints);
 
             Gizmos.color = Color.white;
 
