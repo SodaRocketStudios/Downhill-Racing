@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Curve
+namespace CurveBuilder
 {
     public class CurveTest : MonoBehaviour
     {

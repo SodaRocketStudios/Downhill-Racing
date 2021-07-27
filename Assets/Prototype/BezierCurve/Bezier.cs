@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Curve
+namespace CurveBuilder
 {
     public static class Bezier
     {
@@ -11,7 +9,7 @@ namespace Curve
             // If there aren't at least 2 points.
             if(controlPoints.Length < 2)
             {
-                Debug.LogWarning($"a curve needs at least two points, you provided {controlPoints.Length}.");
+                Debug.LogWarning($"A curve needs at least two points, you provided {controlPoints.Length}.");
                 return new Vector3[]{Vector3.zero};
             }
 
