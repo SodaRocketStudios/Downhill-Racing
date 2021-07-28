@@ -15,11 +15,11 @@ E:/Documents/GameDev/Projects/Downhill Racing
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50981
+53939
 Successfully changed project path to: E:/Documents/GameDev/Projects/Downhill Racing
 E:/Documents/GameDev/Projects/Downhill Racing
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 45.10 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 43.34 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.4f1 (0abb6314276a)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -35,94 +35,110 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56060
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56756
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.002706 seconds.
+Registered in 0.002868 seconds.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 62.13 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 66.29 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.123 seconds
+- Completed reload, in  1.225 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000925 seconds.
+Registered in 0.001517 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 44.12 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 65.40 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.877 seconds
+- Completed reload, in  1.232 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2575 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 119.0 MB.
-System memory in use after: 116.2 MB.
+Unloading 2576 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 119.1 MB.
+System memory in use after: 116.3 MB.
 
-Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 2982.
-Total: 3.801800 ms (FindLiveObjects: 0.416500 ms CreateObjectMapping: 0.071500 ms MarkObjects: 2.026100 ms  DeleteObjects: 1.286300 ms)
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 2983.
+Total: 8.392800 ms (FindLiveObjects: 0.413900 ms CreateObjectMapping: 0.110900 ms MarkObjects: 3.195800 ms  DeleteObjects: 4.670400 ms)
 
 ========================================================================
 Received Import Request.
+  path: Assets/Prototype/CurveBuilder/Scripts/CurveData.cs
+  artifactKey: Guid(71b7fea4e67f87d49a350a01bf7ec9c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prototype/CurveBuilder/Scripts/CurveData.cs using Guid(71b7fea4e67f87d49a350a01bf7ec9c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efb5d3c65a76d5fe07829f24f8483aef') in 0.043350 seconds
+  Import took 0.083355 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Prototype/CurveBuilder/Scripts/Bezier.cs
+  artifactKey: Guid(8249bcd898a51d546a0f7517528a10a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prototype/CurveBuilder/Scripts/Bezier.cs using Guid(8249bcd898a51d546a0f7517528a10a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5838d6ed560d7d68e9040a028a0a0b06') in 0.008227 seconds
+  Import took 0.018989 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.498624 seconds.
   path: Assets/Prototype/CurveBuilder/Scripts/MeshBuilder.cs
   artifactKey: Guid(59815da369829b6438c4b0be8b51ba18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prototype/CurveBuilder/Scripts/MeshBuilder.cs using Guid(59815da369829b6438c4b0be8b51ba18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cb3e170789f167ca15f1e1d87214d7d') in 0.029441 seconds
-  Import took 0.042828 seconds .
+Start importing Assets/Prototype/CurveBuilder/Scripts/MeshBuilder.cs using Guid(59815da369829b6438c4b0be8b51ba18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1839879855ab1514845dd26ca15e0074') in 0.007355 seconds
+  Import took 0.022117 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.932247 seconds.
+  path: Assets/Prototype/CurveBuilder/Scripts/Spline.cs
+  artifactKey: Guid(b5a7bc3dbce617d4ea3812606c3338d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prototype/CurveBuilder/Scripts/Spline.cs using Guid(b5a7bc3dbce617d4ea3812606c3338d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3005eab5a070674638f59ba65e461a7d') in 0.006861 seconds
+  Import took 0.017084 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001134 seconds.
+Registered in 0.001000 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.791 seconds
+- Completed reload, in  0.771 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2500 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 115.5 MB.
+Unloading 2501 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 115.6 MB.
 System memory in use after: 112.8 MB.
 
-Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 2985.
-Total: 4.066500 ms (FindLiveObjects: 0.370000 ms CreateObjectMapping: 0.071700 ms MarkObjects: 2.206600 ms  DeleteObjects: 1.416900 ms)
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 2986.
+Total: 4.171400 ms (FindLiveObjects: 0.355700 ms CreateObjectMapping: 0.066900 ms MarkObjects: 2.321600 ms  DeleteObjects: 1.425600 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 76.334974 seconds.
-  path: Assets/Prototype/CurveBuilder/Scripts/MeshBuilder.cs
-  artifactKey: Guid(59815da369829b6438c4b0be8b51ba18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prototype/CurveBuilder/Scripts/MeshBuilder.cs using Guid(59815da369829b6438c4b0be8b51ba18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33a9e026c4eacd7f3b3013988b885dec') in 0.005662 seconds
-  Import took 0.021671 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000242 seconds.
+  Time since last request: 42.373917 seconds.
   path: Assets/Prototype/CurveBuilder/Scripts/Spline.cs
   artifactKey: Guid(b5a7bc3dbce617d4ea3812606c3338d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prototype/CurveBuilder/Scripts/Spline.cs using Guid(b5a7bc3dbce617d4ea3812606c3338d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a30b3226932ebe9089e7af12dfe392e') in 0.005489 seconds
-  Import took 0.010768 seconds .
+Start importing Assets/Prototype/CurveBuilder/Scripts/Spline.cs using Guid(b5a7bc3dbce617d4ea3812606c3338d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2621fc40311af8e3693b2e0d775fdc8') in 0.005267 seconds
+  Import took 0.042957 seconds .
 

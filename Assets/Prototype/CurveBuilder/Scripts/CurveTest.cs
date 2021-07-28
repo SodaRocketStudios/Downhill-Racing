@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CurveBuilder
+namespace PathBuilder
 {
     public class CurveTest : MonoBehaviour
     {

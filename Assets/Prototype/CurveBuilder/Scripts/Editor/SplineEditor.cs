@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
-namespace CurveBuilder
+namespace PathBuilder
 {
     [CustomEditor(typeof(Spline))]
     public class SplineEditor : Editor
