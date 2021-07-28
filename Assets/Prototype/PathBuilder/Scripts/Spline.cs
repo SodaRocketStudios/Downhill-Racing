@@ -5,10 +5,10 @@ namespace PathBuilder
     public class Spline : MonoBehaviour
     {
         [SerializeField, Min(1), Tooltip("The number of segments that the curve will be made of.")]
-        private int resolution = 10;
+        private int _resolution = 10;
         
         [SerializeField]
-        private SplineType splineType = SplineType.bezier;
+        private SplineType _splineType = SplineType.bezier;
 
         [SerializeField]
         private bool closedLoop = false;
@@ -43,16 +43,13 @@ namespace PathBuilder
         }
         private float[] _normalAngles;
 
-        private int _resolution = 10;
 
-
-        public Spline(SplineType splineType, int resolution = 10)
+        public Spline(SplineType splineType, int numberOfControlPoints = 4, int resolution = 100)
         {
-            Initialize();
-        }
+            _splineType = splineType;
+            _resolution = Mathf.Max(resolution, 1);
+            _controlPoints = new Vector3[numberOfControlPoints];
 
-        private void Awake()
-        {
             Initialize();
         }
 
@@ -70,7 +67,7 @@ namespace PathBuilder
                 _controlPoints = loopPoints;
             }
 
-            switch(splineType)
+            switch(_splineType)
             {
                 case SplineType.bezier:
                     generator = new Bezier();
@@ -83,7 +80,7 @@ namespace PathBuilder
                     return;
             }
 
-            _resolution = Mathf.Max(resolution, 1);
+            _resolution = Mathf.Max(_resolution, 1);
             _vertices = generator?.GetCurve(_controlPoints, _resolution);
             _normalAngles = new float[_resolution];
 
