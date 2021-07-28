@@ -5,11 +5,11 @@ namespace CurveBuilder
     public class CurveTest : MonoBehaviour
     {
         public Vector3[] controlPoints;
-        Curve curve;
+        CurveData curve;
 
         private void OnDrawGizmos()
         {
-            curve = new Curve(controlPoints, CurveType.bezier);
+            curve = new CurveData(controlPoints, CurveType.bezier);
 
             Gizmos.color = Color.white;
 

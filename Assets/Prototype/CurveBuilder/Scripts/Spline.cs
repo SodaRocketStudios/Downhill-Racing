@@ -18,10 +18,10 @@ namespace CurveBuilder
 
         public Vector3[] controlPoints;
 
-        private Curve _curveData;
-        public Curve CurveData
+        private CurveData _curve;
+        public CurveData Curve
         {
-            get{return _curveData;}
+            get{return _curve;}
         }
 
         private void Awake()
@@ -40,10 +40,10 @@ namespace CurveBuilder
                 }
                 loopPoints[loopPoints.Length-1] = loopPoints[0];
                 loopPoints[loopPoints.Length-2] = loopPoints[0] + (loopPoints[0]-loopPoints[1]);
-                _curveData = new Curve(loopPoints, curveType, resolution);
+                _curve = new CurveData(loopPoints, curveType, resolution);
                 return;
             }
-            _curveData = new Curve(controlPoints, curveType, resolution);
+            _curve = new CurveData(controlPoints, curveType, resolution);
         }
 
         private void OnValidate()
@@ -53,7 +53,7 @@ namespace CurveBuilder
 
         private void OnDrawGizmos()
         {
-            _curveData.Draw();   
+            _curve.Draw();   
         }
     }
 }

@@ -2,10 +2,10 @@ using UnityEngine;
 
 namespace CurveBuilder
 {
-    public class Curve
+    public class CurveData
     {
         private CurveGenerator generator;
-        
+
         private Vector3[] _vertices;
         public Vector3[] Vertices
         {
@@ -19,7 +19,7 @@ namespace CurveBuilder
         }
         private float _normalAngle = 0;
 
-        public Curve(Vector3[] controlPoints, CurveType curveType, int resolution = 10)
+        public CurveData(Vector3[] controlPoints, CurveType curveType, int resolution = 10)
         {
             switch(curveType)
             {
