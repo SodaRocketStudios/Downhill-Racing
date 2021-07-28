@@ -17,8 +17,6 @@ namespace CurveBuilder
                 {
                     _vertices[i] = value[i];
                 }
-
-                CalculateNormals(_normalAngle);
             }
         }
 
@@ -45,6 +43,7 @@ namespace CurveBuilder
                     return;
             }
             Vertices = generator?.GetCurve(controlPoints, resolution);
+            CalculateNormals(_normalAngle);
         }
 
         // Calculates normal vectors for each segment of a curve.

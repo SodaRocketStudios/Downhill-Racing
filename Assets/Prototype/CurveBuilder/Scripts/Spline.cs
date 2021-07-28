@@ -20,6 +20,9 @@ namespace CurveBuilder
             get{return _controlPoints;}
         }
 
+        [SerializeField]
+        private bool drawSpline;
+
         private CurveData _curve;
         public CurveData Curve
         {
@@ -55,7 +58,10 @@ namespace CurveBuilder
 
         private void OnDrawGizmos()
         {
-            _curve.Draw();   
+            if(drawSpline)
+            {
+                _curve.Draw();
+            }      
         }
     }
 }
