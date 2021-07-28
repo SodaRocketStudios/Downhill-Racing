@@ -8,7 +8,7 @@ namespace PathBuilder
         private int resolution = 10;
         
         [SerializeField]
-        private CurveType curveType = CurveType.bezier;
+        private SplineType splineType = SplineType.bezier;
 
         [SerializeField]
         private bool closedLoop = false;
@@ -18,13 +18,18 @@ namespace PathBuilder
         public Vector3[] ControlPoints
         {
             get{return _controlPoints;}
+            set
+            {
+                _controlPoints = value;
+                Initialize();
+            }
         }
 
         [SerializeField]
         private bool drawSpline;
 
-        private CurveData _curve;
-        public CurveData Curve
+        private SplineData _curve;
+        public SplineData Curve
         {
             get{return _curve;}
         }
@@ -45,10 +50,10 @@ namespace PathBuilder
                 }
                 loopPoints[loopPoints.Length-1] = loopPoints[0];
                 loopPoints[loopPoints.Length-2] = loopPoints[0] + (loopPoints[0]-loopPoints[1]);
-                _curve = new CurveData(loopPoints, curveType, resolution);
+                _curve = new SplineData(loopPoints, splineType, resolution);
                 return;
             }
-            _curve = new CurveData(_controlPoints, curveType, resolution);
+            _curve = new SplineData(_controlPoints, splineType, resolution);
         }
 
         private void OnValidate()

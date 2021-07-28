@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace PathBuilder
 {
-    public class CurveData
+    public class SplineData
     {
         private CurveGenerator generator;
 
@@ -10,14 +10,6 @@ namespace PathBuilder
         public Vector3[] Vertices
         {
             get{return _vertices;}
-            set
-            {
-                _vertices = new Vector3[value.Length];
-                for(int i = 0; i < value.Length; i++)
-                {
-                    _vertices[i] = value[i];
-                }
-            }
         }
 
         private Vector3[] _normals;
@@ -25,29 +17,35 @@ namespace PathBuilder
         {
             get{return _normals;}
         }
-        private float _normalAngle = 0;
+        private float[] _normalAngles;
+
+        private int _resolution = 10;
 
 
-        public CurveData(Vector3[] controlPoints, CurveType curveType, int resolution = 10)
+        public SplineData(Vector3[] controlPoints, SplineType splineType, int resolution = 10)
         {
-            switch(curveType)
+            switch(splineType)
             {
-                case CurveType.bezier:
+                case SplineType.bezier:
                     generator = new Bezier();
                     break;
-                case CurveType.linear:
-                    Vertices = controlPoints;
+                case SplineType.linear:
+                    _vertices = controlPoints;
                     return;
                 default:
-                    Vertices = controlPoints;
+                    _vertices = controlPoints;
                     return;
             }
-            Vertices = generator?.GetCurve(controlPoints, resolution);
-            CalculateNormals(_normalAngle);
+
+            _resolution = Mathf.Max(resolution, 1);
+            _vertices = generator?.GetCurve(controlPoints, _resolution);
+            _normalAngles = new float[_resolution];
+
+            CalculateNormals();
         }
 
         // Calculates normal vectors for each segment of a curve.
-        private void CalculateNormals(float angle)
+        private void CalculateNormals()
         {
             _normals = new Vector3[_vertices.Length - 1];
 
@@ -58,7 +56,7 @@ namespace PathBuilder
                 Vector3 line = _vertices[i] - _vertices[i+1];
                 Quaternion rotationToLine = Quaternion.Inverse(Quaternion.FromToRotation(line, Vector3.right));
                 Vector3 normal = rotationToLine*Vector3.up;
-                normal = Quaternion.AngleAxis(angle, line)*normal; // Rotate the normal by the desired amount
+                normal = Quaternion.AngleAxis(_normalAngles[i], line)*normal; // Rotate the normal by the desired amount
                 _normals[i] = normal;
             }
         }
@@ -75,7 +73,7 @@ namespace PathBuilder
         }
     }
 
-    public enum CurveType
+    public enum SplineType
     {
         bezier,
         linear
