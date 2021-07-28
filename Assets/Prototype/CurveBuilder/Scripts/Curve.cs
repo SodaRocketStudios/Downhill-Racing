@@ -32,7 +32,6 @@ namespace CurveBuilder
             for(int i = 0; i < vertices.Length; i++)
             {
                 _vertices[i] = vertices[i];
-                Debug.Log(vertices[i]);
             }
 
             CalculateNormals(_normalAngle);

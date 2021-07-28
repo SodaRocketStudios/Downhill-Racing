@@ -13,11 +13,12 @@ namespace CurveBuilder
                 return new Vector3[]{Vector3.zero};
             }
 
-            Vector3[] curvePoints = new Vector3[resolution];
+            Vector3[] curvePoints = new Vector3[resolution+1];
 
-            float t = 0;
-            for(int i = 0; i < resolution; i++, t += 1f/resolution)
+            for(int i = 0; i <= resolution; i++)
             {
+                float t = i*1.0f/resolution;
+                Debug.Log(t);
                 curvePoints[i] = GetPoint(controlPoints, t);
             }
 

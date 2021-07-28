@@ -245,9 +245,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a7bc3dbce617d4ea3812606c3338d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPoints: 10
-  resolution: 216
+  resolution: 100
   curveType: 0
+  closedLoop: 1
+  controlPoints:
+  - {x: 0, y: 6.9, z: 0}
+  - {x: -6.49, y: -4.81, z: 0}
+  - {x: 0, y: -16.15, z: 0}
+  - {x: 10, y: 7.86, z: 0}
 --- !u!4 &789388666
 Transform:
   m_ObjectHideFlags: 0
