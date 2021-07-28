@@ -5,8 +5,18 @@ namespace CurveBuilder
     public class Curve
     {
         private CurveGenerator generator;
+        
         private Vector3[] _vertices;
+        public Vector3[] Vertices
+        {
+            get{return _vertices;}
+        }
+
         private Vector3[] _normals;
+        public Vector3[] Normals
+        {
+            get{return _normals;}
+        }
         private float _normalAngle = 0;
 
         public Curve(Vector3[] controlPoints, CurveType curveType, int resolution = 10)
