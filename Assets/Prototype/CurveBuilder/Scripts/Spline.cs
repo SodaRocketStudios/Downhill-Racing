@@ -36,11 +36,6 @@ namespace CurveBuilder
                 }
                 loopPoints[loopPoints.Length-1] = loopPoints[0];
                 loopPoints[loopPoints.Length-2] = loopPoints[0] + (loopPoints[0]-loopPoints[1]);
-
-                for(int i = 0; i < loopPoints.Length; i++)
-                {
-                    Debug.Log(loopPoints[i]);
-                }
                 curve = new Curve(loopPoints, curveType, resolution);
                 return;
             }
