@@ -15,8 +15,8 @@ namespace PathBuilder
             Vector3[] vertices;
             int[] triangles;
 
-            Vector3[] curvePoints = spline.Curve.Vertices;
-            Vector3[] curveNormals = spline.Curve.Normals;
+            Vector3[] curvePoints = spline.Vertices;
+            Vector3[] curveNormals = spline.Normals;
 
             // Need two vertices for each point in the curve.
             vertices = new Vector3[curvePoints.Length*2];
