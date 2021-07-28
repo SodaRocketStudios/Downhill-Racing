@@ -29,12 +29,18 @@ namespace CurveBuilder
         {
             if(closedLoop == true)
             {
-                Vector3[] loopPoints = new Vector3[controlPoints.Length+1];
-                for(int i = 0; i < loopPoints.Length - 1; i++)
+                Vector3[] loopPoints = new Vector3[controlPoints.Length+2];
+                for(int i = 0; i < controlPoints.Length; i++)
                 {
                     loopPoints[i] = controlPoints[i];
                 }
                 loopPoints[loopPoints.Length-1] = loopPoints[0];
+                loopPoints[loopPoints.Length-2] = loopPoints[0] + (loopPoints[0]-loopPoints[1]);
+
+                for(int i = 0; i < loopPoints.Length; i++)
+                {
+                    Debug.Log(loopPoints[i]);
+                }
                 curve = new Curve(loopPoints, curveType, resolution);
                 return;
             }

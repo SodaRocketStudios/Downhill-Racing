@@ -18,7 +18,6 @@ namespace CurveBuilder
             for(int i = 0; i <= resolution; i++)
             {
                 float t = i*1.0f/resolution;
-                Debug.Log(t);
                 curvePoints[i] = GetPoint(controlPoints, t);
             }
 
