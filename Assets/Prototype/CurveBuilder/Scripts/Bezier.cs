@@ -4,6 +4,7 @@ namespace CurveBuilder
 {
     public class Bezier : CurveGenerator
     {
+        // Returns an array of points that define the vertices of a bezier curve.
         public Vector3[] GetCurve(Vector3[] controlPoints, int resolution = 10)
         {
             // If there aren't at least 2 points.
@@ -24,6 +25,7 @@ namespace CurveBuilder
             return curvePoints;
         }
 
+        // Get the vertex at point t along the curve.
         private Vector3 GetPoint(Vector3[] controlPoints, float t)
         {
             int numberOfPoints = controlPoints.Length;

@@ -10,8 +10,8 @@ namespace CurveBuilder
         {
             Mesh mesh = new Mesh();
 
-            Vector3[] curvePoints = spline.CurveData.Vertices;
-            Vector3[] curveNormals = spline.CurveData.Normals;
+            Vector3[] curvePoints = spline.Curve.Vertices;
+            Vector3[] curveNormals = spline.Curve.Normals;
 
             return mesh;
         }

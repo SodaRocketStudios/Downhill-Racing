@@ -11,9 +11,9 @@ namespace CurveBuilder
             Spline spline = target as Spline;
 
             Handles.color = new Color(1, 0f, 0f, 1);
-            for(int i = 0; i < spline.controlPoints.Length; i++)
+            for(int i = 0; i < spline.ControlPoints.Length; i++)
             {
-                Handles.SphereHandleCap(0, spline.controlPoints[i], Quaternion.identity, 0.1f, EventType.Repaint);
+                Handles.SphereHandleCap(0, spline.ControlPoints[i], Quaternion.identity, 0.1f, EventType.Repaint);
             }
         }
     }    
